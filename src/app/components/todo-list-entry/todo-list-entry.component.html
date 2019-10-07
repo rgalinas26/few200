@@ -1,0 +1,14 @@
+<header>
+  <h6>{{ title }}</h6>
+</header>
+<div class="form-group">
+  <label for="item">Item</label>
+  <input class="form-control"
+         #cat>
+  <!--this is a template variable. (#cat)
+    Angular uses these to refer to an html element see call to addItem()-->
+  <input type="button"
+         (click)="addItem(cat)"
+         class="btn btn-primary"
+         value="Add Item">
+</div>

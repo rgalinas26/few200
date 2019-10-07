@@ -1,0 +1,15 @@
+<header>
+  <h5>Your ToDo List</h5>
+</header>
+
+<div class="row">
+  <app-todo-list-entry [title]="entryTitle"
+                       (addedItem)="addThingToList($event)"></app-todo-list-entry>
+  <!--outputs are parens, square brackets are inputs-->
+</div>
+<div class="row">
+  <app-todo-list-list [items]="stuff"></app-todo-list-list>
+  <!--this component
+  declaed an input called items and I am giving it "stuff" from the
+parent component-->
+</div>
