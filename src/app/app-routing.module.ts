@@ -14,7 +14,7 @@ const routes: Routes = [
     component: DashboardComponent
   },
   {
-    path: '*', // catchall that redirects to dashboard should a user input an invalid URL
+    path: '**', // catchall that redirects to dashboard should a user input an invalid URL
     redirectTo: 'dashboard'
   }
 ];
