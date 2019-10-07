@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TodoListItems } from '../../models';
+import { TodoDataService } from 'src/app/services/todo.data.services';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-todo-list',
@@ -9,20 +11,21 @@ import { TodoListItems } from '../../models';
 export class TodoListComponent implements OnInit {
 
   entryTitle = 'Add your stuff';
-  stuff: TodoListItems[] = [
-    { id: 1, description: 'Get bread', complete: true },
-    { id: 2, description: 'Get more bread', complete: false }
-  ];
+  stuff$: Observable<TodoListItems[]>; // the $ is a naming convention to indicate
+  // an observable. If you see a $ on a property you have to use | async
+  // syntax to invoke it
   nextId = 3;
 
-  constructor() { }
+  constructor(private service: TodoDataService) { }
 
   ngOnInit() {
+    this.stuff$ = this.service.getData();
   }
 
   addThingToList(description: string) {
-
-    this.stuff = [{ id: this.nextId++, description, complete: false }, ...this.stuff];
+    this.service.addItem(description);
   }
-
+  markComplete(item: TodoListItems) {
+    this.service.markComplete(item);
+  }
 }

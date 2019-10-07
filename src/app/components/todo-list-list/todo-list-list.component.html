@@ -2,6 +2,8 @@
   <li class="alert"
       [ngClass]="{'alert-success': !thingy.complete, 'alert-info': thingy.complete}"
       *ngFor="let thingy of items">
+    <!--this says add the class alert-class
+      if thingy complete is false, and alert-info if ture -->
     <span [ngClass]="{completed: thingy.complete}">{{ thingy.description }}</span>
     <span *ngIf="thingy.complete == false">
       <input type="button"

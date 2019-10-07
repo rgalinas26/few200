@@ -8,7 +8,10 @@
   <!--outputs are parens, square brackets are inputs-->
 </div>
 <div class="row">
-  <app-todo-list-list [items]="stuff"></app-todo-list-list>
+  <app-todo-list-list (markedComplete)="markComplete($event)"
+                      [items]="stuff$ | async"></app-todo-list-list>
+  <!-- pipe async here tells the [items] that
+                      the array will return in asynch fashion. -->
   <!--this component
   declaed an input called items and I am giving it "stuff" from the
 parent component-->
