@@ -26,6 +26,7 @@ const selectCounterBranch = (state: AppState) => state.counter;
 
 
 export const selectCurrentCount = createSelector(selectCounterBranch, b => b.count);
+export const selectCountingBy = createSelector(selectCounterBranch, b => b.by);
 // this function takes the current count and returns a boolean depending on the count
 // equalling zero
 export const selectResetDisabled = createSelector(

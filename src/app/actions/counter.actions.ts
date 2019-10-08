@@ -1,6 +1,7 @@
 import { Action, createAction, props } from '@ngrx/store';
 
 export const countIncremented = createAction(
+  // An action object that says what module we are in [app] and a unique name.
   '[app] count incremented'
 );
 

@@ -15,6 +15,8 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducers } from './reducers';
 import { CounterByComponent } from './components/counter-by/counter-by.component';
+import { EffectsModule } from '@ngrx/effects';
+import { CounterEffects } from './effects/counter.effects';
 
 @NgModule({
   declarations: [
@@ -32,8 +34,9 @@ import { CounterByComponent } from './components/counter-by/counter-by.component
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers),
-    StoreDevtoolsModule.instrument() // if something ends in module
+    StoreDevtoolsModule.instrument(), // if something ends in module
     // you should put it in your import statment.
+    EffectsModule.forRoot([CounterEffects]),
   ],
   providers: [
     TodoDataService

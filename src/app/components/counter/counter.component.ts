@@ -17,6 +17,8 @@ export class CounterComponent implements OnInit {
   constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
+    // this a subscription and it gets the state right away. ngOnInit
+    // resolves right before the component is added to the DOM.
     // sets the observable count to the value in the store using a selector function
     this.count$ = this.store.select(selectCurrentCount);
     this.resetDisabled$ = this.store.select(selectResetDisabled);
