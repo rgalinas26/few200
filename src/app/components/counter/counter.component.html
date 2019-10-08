@@ -1,0 +1,17 @@
+<input type="button"
+       class="btn btn-primary"
+       (click)="decrement()"
+       value="-">
+<span>{{ count$ | async }}</span>
+<input type="button"
+       class="btn btn-primary"
+       (click)="increment()"
+       value="+">
+
+<input type="button"
+       [disabled]="resetDisabled$ | async"
+       class="btn btn-primary"
+       (click)="reset()"
+       value="reset">
+
+<app-counter-by></app-counter-by>
