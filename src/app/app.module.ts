@@ -17,6 +17,7 @@ import { reducers } from './reducers';
 import { CounterByComponent } from './components/counter-by/counter-by.component';
 import { EffectsModule } from '@ngrx/effects';
 import { CounterEffects } from './effects/counter.effects';
+import { BooksModule } from './features/books/books.module';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { CounterEffects } from './effects/counter.effects';
   ],
   imports: [
     BrowserModule,
+    BooksModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument(), // if something ends in module
