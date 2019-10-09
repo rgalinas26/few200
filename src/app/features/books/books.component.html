@@ -1,7 +1,13 @@
 <header class="page-header">
   <h3>My Books</h3>
 </header>
-<app-entry></app-entry>
-<app-list></app-list>
-<app-sorter></app-sorter>
-<app-list [model]="books$ | async"></app-list>
+<div *ngIf="loaded$ | async">
+  <app-entry></app-entry>
+  <app-sorter></app-sorter>
+  <app-list [model]="books$ | async"></app-list>
+</div>
+<div class="alert alert-info"
+     *ngIf="(loaded$ | async) === false">
+  <h3>Your Books are loading. Chill.</h3>
+  <img src="https://www.demilked.com/magazine/wp-content/uploads/2016/06/gif-animations-replace-loading-screen-14.gif">
+</div>
