@@ -2,6 +2,7 @@ import { ActionReducerMap, createFeatureSelector, createSelector } from '@ngrx/s
 import * as fromList from './list.reducer';
 import * as fromModels from '../models';
 import * as fromSorter from './sort.reducer';
+import { BookListModel } from '../models';
 
 export const featureName = 'booksFeature';
 
@@ -33,7 +34,12 @@ const selectSortingBy = createSelector(selectSorterBranch, s => s.by);
 
 export const selectBookListItemModelUnsorted = createSelector(
   selectBookEntityArray,
-  books => (books as fromModels.BookListModel[]));
+  books => books.map(book => {
+    return {
+      ...book,
+      isTemporary: book.id.startsWith('T')
+    } as BookListModel;
+  }));
 
 export const selectBookListItemModel = createSelector(
   selectBookListItemModelUnsorted,
