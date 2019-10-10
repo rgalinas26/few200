@@ -1,0 +1,14 @@
+<div class="alert alert-danger"
+     *ngIf="model.length === 0">
+  <h3>You don't own any games! Add some!</h3>
+</div>
+
+
+<div class="card"
+     *ngFor="let games of model">
+  <div class="card-body">
+    <h5 class="card-title">{{ games.title }}</h5>
+    <p class="card-text">By {{games.publisher}}</p>
+    <p class="card-text">By {{games.platform}}</p>
+  </div>
+</div>

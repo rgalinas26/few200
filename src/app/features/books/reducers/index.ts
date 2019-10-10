@@ -6,6 +6,7 @@ import { BookListModel } from '../models';
 
 export const featureName = 'booksFeature';
 
+
 export interface BooksFeatureState {
   list: fromList.BookState;
   sorter: fromSorter.SortState;

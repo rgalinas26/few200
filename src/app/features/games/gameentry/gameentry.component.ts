@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { GameListState } from '../reducers/games.list.reducer';
 
 @Component({
   selector: 'app-gameentry',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameentryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<GameListState>) { }
 
   ngOnInit() {
   }
