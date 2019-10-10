@@ -12,8 +12,8 @@ export interface BookState extends EntityState<BookEntity> {
   listLoaded: boolean;
 }
 
-export const adapter = createEntityAdapter<BookEntity>();
 
+export const adapter = createEntityAdapter<BookEntity>();
 const initialState = adapter.getInitialState({ listLoaded: false });
 
 

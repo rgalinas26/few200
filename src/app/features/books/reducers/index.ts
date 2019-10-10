@@ -9,6 +9,7 @@ export const featureName = 'booksFeature';
 export interface BooksFeatureState {
   list: fromList.BookState;
   sorter: fromSorter.SortState;
+
 }
 
 export const reducers: ActionReducerMap<BooksFeatureState> = {

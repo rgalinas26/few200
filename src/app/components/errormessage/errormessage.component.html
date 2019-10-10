@@ -1,0 +1,8 @@
+<div class="alert alert-danger"
+     role="alert"
+     *ngIf="(hasError$ | async) !== false">
+  "THIS WILL REMAIN A STEPHEN KING-LESS COLLECTION"- JACK KETCHUM
+  <button type="button"
+          (click)="clearError()"
+          class="btn btn-warning">Clear</button>
+</div>
