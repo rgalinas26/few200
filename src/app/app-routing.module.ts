@@ -4,6 +4,7 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { BooksComponent } from './features/books/books.component';
+import { GamesComponent } from './features/games/games.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,11 @@ const routes: Routes = [
   {
     path: 'books',
     component: BooksComponent
+  },
+  {
+    path: 'games',
+    component: GamesComponent
+
   },
   {
     path: '**', // catchall that redirects to dashboard should a user input an invalid URL

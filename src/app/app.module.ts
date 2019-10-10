@@ -18,6 +18,7 @@ import { CounterByComponent } from './components/counter-by/counter-by.component
 import { EffectsModule } from '@ngrx/effects';
 import { CounterEffects } from './effects/counter.effects';
 import { BooksModule } from './features/books/books.module';
+import { GamesModule } from './features/games/games.module';
 import { ErrormessageComponent } from './components/errormessage/errormessage.component';
 
 @NgModule({
@@ -36,6 +37,7 @@ import { ErrormessageComponent } from './components/errormessage/errormessage.co
   imports: [
     BrowserModule,
     BooksModule,
+    GamesModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument(), // if something ends in module
