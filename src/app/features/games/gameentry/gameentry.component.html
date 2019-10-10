@@ -1,10 +1,10 @@
 <div>
-  <select>
-    <option value="volvo">PC</option>
-    <option value="saab">Xbox</option>
-    <option value="opel">PS4</option>
-    <option value="audi">Nintendo Switch</option>
-    <option value="audi">Nintendo DS</option>
+  <select #platform>
+    <option value="PC">PC</option>
+    <option value="Xbox">Xbox</option>
+    <option value="PS4">PS4</option>
+    <option value="Nintendo Switch">Nintendo Switch</option>
+    <option value="Nintendo DS">Nintendo DS</option>
   </select>
   <div class="form-group">
     <label for="title">Title</label>
@@ -20,6 +20,7 @@
   </div>
 
   <input type="button"
+         (click)="add(title, publisher, platform)"
          class="btn btn-primary"
          value="Add">
 </div>

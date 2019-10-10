@@ -17,15 +17,18 @@ export const adapter = createEntityAdapter<GameEntity>();
 
 // const initialState = adapter.getInitialState();
 const initialState: GameListState = {
-  ids: ['1'],
-  entities: {
-    1: { id: '1', title: 'Dark Souls', publisher: 'From', platform: 'Switch' }
-  }
+  ids: [],
+  entities: {}
+  // ids: ['1'],
+  // entities: {
+  //   1: { id: '1', title: 'Dark Souls', publisher: 'From', platform: 'Switch' }
+  // }
 };
 
 const reducerFunction = createReducer(
   initialState,
-  on(actions.loadGameData, (state) => ({ ...state }))
+  on(actions.loadGameData, (state) => ({ ...state })),
+  on(actions.gameAdded, (state, action) => adapter.addOne(action.entity, state))
 );
 
 export function reducer(state: GameListState = initialState, action: Action) {
