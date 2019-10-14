@@ -14,6 +14,8 @@ export class TodoDataService {
     return this.subject.asObservable();
   }
 
+  // this is called by the parent component todo-list with the value it was passed by its child component.
+  // (todo-list-entry). This is likely where you would call an API.
   addItem(description: string) {
     const itemToAdd = { id: this.currentID++, description, complete: false };
     this.data = [itemToAdd, ...this.data];

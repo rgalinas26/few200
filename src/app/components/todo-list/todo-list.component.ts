@@ -22,6 +22,8 @@ export class TodoListComponent implements OnInit {
     this.stuff$ = this.service.getData();
   }
 
+  // Here, after the child component has emitted an event with data, the parent component's function
+  // executes to call the service where the item is added to the array of todolist items.
   addThingToList(description: string) {
     this.service.addItem(description);
   }
